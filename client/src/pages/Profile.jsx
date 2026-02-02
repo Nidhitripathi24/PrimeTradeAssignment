@@ -28,29 +28,28 @@ const Profile = () => {
     };
 
     return (
-        <div className="min-h-screen py-8">
+        <div className="min-h-screen py-12">
             <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-8">
-                    <h1 className="text-3xl font-bold text-gray-900">Profile Settings</h1>
-                    <p className="mt-1 text-sm text-gray-600">
-                        Update your account information
+                    <h1 className="page-title" style={{ color: 'white', WebkitTextFillColor: 'white' }}>
+                        Profile Settings
+                    </h1>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '16px', marginTop: '0.5rem' }}>
+                        Manage your account information
                     </p>
                 </div>
 
                 <div className="card">
                     {message && (
-                        <div className={`mb-6 px-4 py-3 rounded-lg text-sm ${message === 'success'
-                                ? 'bg-green-50 border border-green-200 text-green-700'
-                                : 'bg-red-50 border border-red-200 text-red-700'
-                            }`}>
-                            {message === 'success' ? 'Profile updated successfully!' : 'Failed to update profile'}
+                        <div className={message === 'success' ? 'alert-success mb-6' : 'alert-error mb-6'}>
+                            {message === 'success' ? '✓ Profile updated successfully!' : '✗ Failed to update profile'}
                         </div>
                     )}
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                                Full name
+                            <label htmlFor="name" className="form-label">
+                                Full Name
                             </label>
                             <input
                                 id="name"
@@ -63,8 +62,8 @@ const Profile = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                                Email address
+                            <label htmlFor="email" className="form-label">
+                                Email Address
                             </label>
                             <input
                                 id="email"
@@ -77,8 +76,8 @@ const Profile = () => {
                         </div>
 
                         <div>
-                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-                                New password
+                            <label htmlFor="password" className="form-label">
+                                New Password
                             </label>
                             <input
                                 id="password"
@@ -88,13 +87,13 @@ const Profile = () => {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <p className="mt-1 text-xs text-gray-500">
+                            <p style={{ marginTop: '0.5rem', fontSize: '13px', color: '#a0aec0' }}>
                                 Only fill this if you want to change your password
                             </p>
                         </div>
 
                         <button type="submit" className="btn-primary">
-                            Update Profile
+                            Save Changes
                         </button>
                     </form>
                 </div>
