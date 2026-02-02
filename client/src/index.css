@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+}
+
+@layer components {
+  /* Enhanced Primary Button with Gradient */
+  .btn-primary {
+    @apply w-full text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-offset-2 shadow-lg;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 2px solid transparent;
+    transform: translateY(0);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 25px -5px rgba(102, 126, 234, 0.3), 0 10px 10px -5px rgba(102, 126, 234, 0.2);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  /* Enhanced Input Field with Border Colors */
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl transition-all duration-300 text-gray-900 font-medium;
+    border: 2px solid #e0e7ff;
+    background: linear-gradient(to bottom, #ffffff, #f9fafb);
+  }
+  
+  .input-field:focus {
+    @apply outline-none ring-4;
+    border-color: #667eea;
+    ring-color: rgba(102, 126, 234, 0.2);
+    background: #ffffff;
+    transform: translateY(-1px);
+  }
+  
+  .input-field::placeholder {
+    @apply text-gray-400;
+  }
+
+  /* Enhanced Card with Colorful Border */
+  .card {
+    @apply bg-white rounded-2xl p-8 transition-all duration-300;
+    border: 2px solid #e0e7ff;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card:hover {
+    border-color: #c7d2fe;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15), 0 5px 10px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+  }
+
+  /* Navbar Enhancement */
+  .navbar-link {
+    @apply px-4 py-2 text-sm font-semibold rounded-lg transition-all duration-300;
+    color: #1f2937;
+    border: 2px solid transparent;
+  }
+  
+  .navbar-link:hover {
+    @apply bg-gradient-to-r from-purple-50 to-indigo-50;
+    border-color: #c7d2fe;
+    color: #667eea;
+  }
+
+  /* Note Card Enhancement */
+  .note-card {
+    @apply bg-white rounded-xl p-6 transition-all duration-300 relative overflow-hidden;
+    border: 2px solid #e0e7ff;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.08);
+  }
+  
+  .note-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .note-card:hover {
+    border-color: #c7d2fe;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    transform: translateY(-3px);
+  }
+
+  /* Alert/Message Boxes */
+  .alert-success {
+    @apply px-5 py-4 rounded-xl text-sm font-semibold;
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border: 2px solid #6ee7b7;
+    color: #065f46;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  }
+  
+  .alert-error {
+    @apply px-5 py-4 rounded-xl text-sm font-semibold;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    border: 2px solid #f87171;
+    color: #991b1b;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+  }
+
+  /* Delete Button Enhancement */
+  .btn-delete {
+    @apply transition-all duration-300 rounded-lg p-2;
+    color: #9ca3af;
+    border: 2px solid transparent;
+  }
+  
+  .btn-delete:hover {
+    color: #ef4444;
+    background: #fee2e2;
+    border-color: #fca5a5;
+    transform: scale(1.1);
+  }
+
+  /* Form Label Enhancement */
+  .form-label {
+    @apply block text-sm font-bold mb-2;
+    color: #374151;
+    letter-spacing: 0.025em;
+  }
+
+  /* Title Enhancement */
+  .page-title {
+    @apply text-4xl font-bold bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .section-title {
+    @apply text-xl font-bold;
+    color: #1f2937;
+  }
+
+  /* Stats/Info Box */
+  .info-box {
+    @apply rounded-xl p-4;
+    background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+    border: 2px solid #c4b5fd;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+  }
+
+  /* Link Enhancement */
+  .text-link {
+    @apply font-semibold transition-all duration-300 underline-offset-4;
+    color: #667eea;
+  }
+  
+  .text-link:hover {
+    @apply underline;
+    color: #764ba2;
+  }
+
+  /* Loading/Empty State */
+  .empty-state {
+    @apply text-center py-16 rounded-2xl;
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border: 2px dashed #c7d2fe;
+  }
+}
